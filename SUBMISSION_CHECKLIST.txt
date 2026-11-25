@@ -1,0 +1,12 @@
+SUBMISSION CHECKLIST
+[ ] Both students individually compile and execute all seven tasks.
+[ ] Add screenshots of code and output in each task folder.
+[ ] Complete the test table and record actual outputs.
+[ ] For Q4, run at least ten times and record completion orders and priority/daemon observations.
+[ ] For Q5, compare unsynchronized and synchronized versions over ten runs; record actual results and timing for 10,000 bookings.
+[ ] For Q6, include the deadlock demonstration and explain the four necessary conditions. The supplied wallet code demonstrates prevention by lock ordering.
+[ ] For Q7, scale the sample to 10,000 files and record measured times for pools 1, 2, 4 and 8.
+[ ] Add class diagrams / thread life-cycle diagram / pseudocode where the question requests them.
+[ ] Fill Student A and Student B names, register numbers, contributions and GitHub links.
+[ ] Commit each task progressively to each student's own repository.
+[ ] Verify that every Java program runs on the machine used for submission.
