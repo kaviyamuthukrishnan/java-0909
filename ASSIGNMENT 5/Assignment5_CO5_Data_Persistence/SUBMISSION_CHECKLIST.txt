@@ -1,0 +1,11 @@
+[ ] Create repository CSA09-<RegisterNumber>-Assignment5.
+[ ] Fill report cover with name, register number and GitHub URL.
+[ ] Complete Part A pseudocode in the required faculty format.
+[ ] Compile and run all Java programs.
+[ ] B1: test normal, missing and damaged records; measure 1/10/50 MB and 1k/10k/100k.
+[ ] B2: local dummy database adversarial login test; malformed pass file tests.
+[ ] B3: Statement, PreparedStatement and batch measurements; SELECT and ResultSetMetaData verification; rollback test.
+[ ] B4: migration rejection report and DatabaseMetaData evidence.
+[ ] Add screenshots, SQL script, test data, actual measurements and interpretation.
+[ ] Commit progressively at least once per task; share repository with faculty.
+[ ] Never commit DB credentials or real personal data.
