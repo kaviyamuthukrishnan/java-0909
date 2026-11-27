@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+﻿import React from 'react';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from './components/common/ToastContainer';
 import { AppProvider } from './contexts/AppContext';
 import { AdminAuditLogsPage } from './pages/admin/AdminAuditLogsPage';
@@ -35,7 +35,7 @@ import { ProtectedRoute } from './routes/ProtectedRoute';
 export default function App() {
   return (
     <AppProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           {/* Public Pages */}
           <Route path="/" element={<HomePage />} />
@@ -206,7 +206,8 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <ToastContainer />
-      </BrowserRouter>
+      </HashRouter>
     </AppProvider>
   );
 }
+
