@@ -1,0 +1,6 @@
+{
+  "name": "FoodRescue – Smart Food. Shared Hope.",
+  "description": "Smart Food Waste Prediction and Intelligent Donation Allocation System connecting hotels, restaurants, and canteens with verified NGOs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

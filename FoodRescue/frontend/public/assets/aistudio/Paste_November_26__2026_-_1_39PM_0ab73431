@@ -1,0 +1,1045 @@
+# PROJECT: SMART FOOD WASTE PREDICTION AND INTELLIGENT DONATION ALLOCATION SYSTEM USING JAVA
+
+Act as a senior full-stack software architect, UI/UX designer, Java enterprise developer and product engineer.
+
+Build a complete, modern, professional, responsive and interactive website for my college project:
+
+**Smart Food Waste Prediction and Intelligent Donation Allocation System Using Java**
+
+The application must connect hotels, restaurants, hostels, messes, bakeries, college canteens and other food providers with verified NGOs and food rescue organizations. Its purpose is to reduce food wastage by predicting surplus food, collecting provider confirmation, intelligently allocating confirmed donations to suitable NGOs and tracking the complete collection process.
+
+Do not create just a landing page or a static dashboard. Build a complete multi-role website with functional navigation, forms, dashboards, data tables, charts, notifications, interactive workflows and role-based access.
+
+---
+
+# 1. STRICT TECHNOLOGY STACK
+
+My existing application already has a Java backend and React frontend.
+
+Use the following architecture:
+
+**Frontend:**
+- React 18
+- TypeScript
+- Vite
+- React Router DOM
+- Tailwind CSS
+- Lucide React icons
+- Chart.js or Recharts for charts
+
+**Backend – already existing:**
+- Java
+- Spring Boot 3
+- Spring MVC
+- Spring Security
+- Spring Data JPA
+- Hibernate
+- REST APIs
+- JWT authentication
+
+**Database – already existing:**
+- MySQL 8
+- Database name: foodrescue_db
+
+**Backend URL:** http://localhost:8080
+
+**Frontend URL:** http://localhost:5173
+
+IMPORTANT ARCHITECTURE RULES:
+
+1. Build the complete React frontend.
+2. Connect it to my existing Java Spring Boot REST API.
+3. Do not replace the Java backend with Node.js, Express, Firebase, Supabase or another backend.
+4. Do not create a second database.
+5. Do not introduce a separate authentication system.
+6. Do not change my existing project architecture unnecessarily.
+7. Keep all API communication inside reusable TypeScript service files.
+8. Use environment variables for backend URLs.
+9. Inspect any backend source files provided before assuming API routes or data structures.
+10. If an API does not exist yet, create a clearly documented API integration interface and a controlled demo-data mode. Never pretend a mock operation was saved successfully to the real database.
+
+Create an environment configuration:
+
+VITE_API_BASE_URL=http://localhost:8080
+VITE_USE_MOCK_DATA=true
+
+Mock mode should be clearly labelled DEMO MODE in the interface. It must be possible to disable it when real backend APIs are ready.
+
+---
+
+# 2. WEBSITE BRANDING AND DESIGN
+
+Create a professional product identity named:
+
+**FoodRescue – Smart Food. Shared Hope.**
+
+Tagline:
+
+"Predict Surplus. Rescue Food. Feed Communities."
+
+Design the website like a modern professional social-impact technology platform, not like a basic college project.
+
+Visual style:
+- Forest green as the primary brand colour.
+- Fresh light green for highlights.
+- Warm orange for important actions.
+- White and soft off-white backgrounds.
+- Dark charcoal text.
+- Soft shadows and rounded cards.
+- Clean typography.
+- Attractive icons.
+- High-quality food-related visual elements.
+- Modern charts and dashboards.
+- Beautiful page transitions and subtle animations.
+
+Use a consistent design system throughout all pages.
+
+The website must be:
+- Fully responsive on desktop, tablet and mobile.
+- Easy to navigate.
+- Visually attractive.
+- Accessible with readable text and clear contrast.
+- Consistent across all three user portals.
+
+Create a professional logo using a leaf, food plate or fork-and-leaf concept.
+
+Do not overcrowd the interface. Keep dashboards clean and information-rich.
+
+---
+
+# 3. PUBLIC WEBSITE
+
+Create the following public pages:
+
+## A. Home Page
+
+Design an impressive landing page with:
+
+- Professional navigation bar.
+- FoodRescue logo.
+- Home.
+- How It Works.
+- About Us.
+- Our Impact.
+- Food Safety.
+- Contact.
+- Login.
+- Register.
+
+Hero section headline:
+
+"Turning Surplus Food Into Hope."
+
+Supporting text:
+
+"An intelligent food rescue platform connecting food providers with verified NGOs to reduce food wastage and deliver surplus meals to communities in need."
+
+Include two main buttons:
+
+- Register as Food Provider
+- Register as NGO
+
+Add an attractive hero illustration or food rescue image.
+
+Show platform feature cards:
+1. Smart Food Surplus Prediction.
+2. Verified Food Providers.
+3. Intelligent NGO Allocation.
+4. Real-Time Donation Tracking.
+5. Food Rescue Analytics.
+6. Community Impact.
+
+Include a How It Works section with three steps:
+
+1. Food providers record food inventory and surplus information.
+2. The system predicts possible surplus and requests confirmation from providers.
+3. Confirmed food is intelligently allocated to suitable NGOs for collection and distribution.
+
+Include separate explanations for providers, NGOs and administrators.
+
+Add an impact section with donation statistics. Label sample values as demo data until real records exist.
+
+Add testimonials using clearly labelled sample content, FAQ, contact section and footer.
+
+## B. About Us Page
+
+Explain:
+- Food wastage problem.
+- Need for food redistribution.
+- Purpose of the platform.
+- Role of technology.
+- Expected community benefits.
+- Sustainable Development Goal connections, especially SDG 2 – Zero Hunger and SDG 12 – Responsible Consumption and Production.
+
+## C. How It Works Page
+
+Present the complete workflow visually for:
+- Food providers.
+- NGOs.
+- Administrators.
+
+## D. Food Safety Page
+
+Explain:
+- Preparation time recording.
+- Food category and storage details.
+- Safe collection deadlines.
+- Provider food-safety declaration.
+- NGO collection responsibility.
+- Administrative monitoring.
+
+Never claim that the platform guarantees food safety.
+
+## E. Contact Page
+
+Include contact form, organization details and support information.
+
+---
+
+# 4. AUTHENTICATION AND REGISTRATION
+
+Create separate registration options for:
+
+1. Food Provider.
+2. NGO.
+3. Administrator.
+
+Administrator accounts must not have open public self-registration.
+
+Common authentication features:
+
+- Login.
+- Registration.
+- Email verification.
+- Phone number verification using OTP.
+- Forgot password.
+- Password reset.
+- Logout.
+- Session handling.
+- Role-based redirection.
+- Form validation.
+- Password visibility toggle.
+- Error and success messages.
+
+Use backend authentication where available.
+
+Never place passwords, OTP secrets or JWT secrets directly in frontend code.
+
+During development, if the existing backend prints OTP codes in its console, display a clear development verification instruction. Never create fake production email delivery.
+
+After login:
+- Provider goes to Provider Dashboard.
+- NGO goes to NGO Dashboard.
+- Admin goes to Admin Dashboard.
+
+Protect all private routes according to user role.
+
+---
+
+# 5. FOOD PROVIDER PORTAL
+
+Create a complete Food Provider Portal.
+
+Target users:
+- Hotels.
+- Restaurants.
+- Hostels.
+- Mess facilities.
+- College canteens.
+- Bakeries.
+- Catering services.
+
+## A. Provider Registration
+
+Collect:
+- Organization name.
+- Organization type.
+- Owner/manager name.
+- Email.
+- Phone.
+- Password.
+- Full address.
+- City.
+- District.
+- State.
+- Postal code.
+- Location coordinates where available.
+- Operating hours.
+- Food categories.
+- Approximate daily meal capacity.
+- Applicable FSSAI registration/licence information.
+- Supporting documents.
+
+Allow document uploads.
+
+Show verification status:
+- Not Submitted.
+- Pending Review.
+- Approved.
+- Rejected.
+- Correction Required.
+
+Only an administrator can approve the organization.
+
+AI-assisted document checking may extract text and identify missing or inconsistent fields, but it must never independently certify legal compliance.
+
+## B. Provider Dashboard
+
+Create dashboard cards for:
+
+- Total food items recorded.
+- Today's prepared quantity.
+- Today's sold quantity.
+- Estimated surplus.
+- Confirmed donations.
+- Allocated food.
+- Completed donations.
+- Pending collection.
+- Food waste reduction.
+
+Include:
+- Weekly food inventory chart.
+- Monthly surplus trend.
+- Prediction versus actual surplus chart.
+- Recent donation activity.
+- Pending notifications.
+- Verification status.
+
+## C. Food Inventory Management
+
+Provide a form to record:
+
+- Food item name.
+- Food category.
+- Quantity prepared.
+- Quantity sold.
+- Remaining quantity.
+- Date.
+- Preparation time.
+- Food storage information.
+- Expiry or safe-use deadline.
+- Notes.
+
+Allow providers to add, edit, view and manage inventory records.
+
+Include search, filter and sorting.
+
+## D. Smart Food Surplus Prediction
+
+This is one of the most important features.
+
+Create a prediction dashboard that estimates potential leftover food using each provider's historical records.
+
+Consider:
+- Past prepared quantity.
+- Past sold quantity.
+- Previous surplus.
+- Weekday and weekend patterns.
+- Food category.
+- Historical demand patterns.
+- Seasonal patterns when data is available.
+
+Display:
+- Predicted surplus quantity.
+- Predicted food categories.
+- Prediction date.
+- Confidence or reliability indication.
+- Historical comparison chart.
+- Explanation of the factors used.
+
+Use a simple statistical prediction model if there is insufficient data for advanced machine learning.
+
+Clearly indicate when there is insufficient historical data.
+
+IMPORTANT:
+
+A prediction is NOT a confirmed donation.
+
+The system must never automatically offer predicted food to NGOs.
+
+## E. Provider Confirmation System
+
+Around 7–8 PM, the system should request providers to confirm their expected surplus, according to the configured schedule.
+
+Example notification:
+
+"Your predicted surplus for today is 50 meals. Would you like to donate this food?"
+
+Provide options:
+
+- Confirm Full Quantity.
+- Confirm Partial Quantity.
+- Enter Another Quantity.
+- Decline Donation.
+- Remind Me Later.
+
+Allow the provider to confirm a smaller quantity or update the actual quantity when the food is ready.
+
+Only confirmed and suitable food can enter the NGO allocation process.
+
+Do not assume that the provider must wait for the daily prediction.
+
+## F. Voluntary Donation System
+
+Providers must be able to donate food at any time.
+
+Create an independent Donate Food button.
+
+Allow them to enter:
+- Food name.
+- Category.
+- Available quantity.
+- Number of estimated meals.
+- Preparation date and time.
+- Ready-for-pickup time.
+- Safe-use deadline.
+- Storage details.
+- Allergen information, when available.
+- Pickup address.
+- Additional instructions.
+
+After submission, create a confirmed donation record and make it available for the allocation workflow, subject to required validation.
+
+## G. Provider Donation Management
+
+Create a donation table with:
+- Donation ID.
+- Food item.
+- Confirmed quantity.
+- Allocated quantity.
+- Remaining quantity.
+- Donation date.
+- Status.
+- Assigned NGOs.
+- Pickup information.
+
+Allow providers to view donation details, communicate with NGOs and track collection status.
+
+---
+
+# 6. NGO PORTAL
+
+Create a complete NGO Portal.
+
+## A. NGO Registration
+
+Collect:
+- NGO name.
+- Registration number.
+- Organization type.
+- Official contact person.
+- Email.
+- Phone.
+- Password.
+- Full address.
+- Service locations.
+- Beneficiary count.
+- Daily meal requirement.
+- Food categories accepted.
+- Maximum quantity that can be collected.
+- Available transport.
+- Volunteer availability.
+- Operating hours.
+- Supporting registration documents.
+
+Require administrator verification.
+
+Show verification status clearly.
+
+## B. NGO Dashboard
+
+Dashboard cards:
+- Available donations.
+- Recommended donations.
+- Accepted donations.
+- Pending pickups.
+- Completed collections.
+- Total meals received.
+- Beneficiaries served.
+
+Include charts showing:
+- Weekly donations received.
+- Monthly collection trend.
+- Food category breakdown.
+- Donation acceptance rate.
+
+Show recent notifications and pickup schedules.
+
+## C. Available Food Donations
+
+Display confirmed donations from providers.
+
+Each donation card should contain:
+- Provider name.
+- Food item.
+- Food category.
+- Available quantity.
+- Preparation time.
+- Safe-use deadline.
+- Pickup location.
+- Distance, when reliable location data is available.
+- Pickup deadline.
+- Food handling instructions.
+- Allocation status.
+
+Add filters:
+- Food category.
+- Location.
+- Quantity.
+- Deadline.
+- Availability.
+- Provider.
+
+Never display predicted but unconfirmed food as an available donation.
+
+## D. Donation Acceptance
+
+Allow NGOs to:
+- View donation details.
+- Accept an available allocation.
+- Decline with a reason.
+- Confirm pickup availability.
+- Request a different collection time.
+- Specify transport availability.
+- Confirm the quantity they can collect.
+
+Support partial allocations across multiple NGOs.
+
+## E. NGO Collection Management
+
+Create a pickup management page showing:
+- Donation ID.
+- Provider.
+- Assigned quantity.
+- Pickup location.
+- Scheduled time.
+- Collection status.
+- Deadline.
+
+Allow NGOs to:
+- Confirm collection.
+- Report a delay.
+- Report an issue.
+- Confirm collected quantity.
+- Submit distribution confirmation.
+- Provide feedback.
+
+---
+
+# 7. INTELLIGENT MULTI-NGO DONATION ALLOCATION
+
+This is one of the main innovations of the project.
+
+Create an intelligent allocation system that distributes confirmed food among suitable NGOs.
+
+Consider:
+1. NGO location and service area.
+2. Requested quantity.
+3. Number of beneficiaries.
+4. Food categories accepted.
+5. NGO collection capacity.
+6. Transport availability.
+7. Time remaining before the safe-use deadline.
+8. NGO availability.
+9. Existing pending allocations.
+
+Example:
+
+A hotel confirms 100 meals.
+
+NGO A requires 40 meals.
+NGO B requires 35 meals.
+NGO C can collect 25 meals.
+
+The system should be able to distribute:
+
+- NGO A: 40 meals.
+- NGO B: 35 meals.
+- NGO C: 25 meals.
+
+Total allocated: 100 meals.
+
+Include an allocation explanation showing why each NGO was selected.
+
+Allow manual administrator intervention when needed.
+
+IMPORTANT ALLOCATION RULES:
+
+- Never allocate more than the confirmed quantity.
+- Never allocate the same quantity twice.
+- Never allocate expired or unsuitable food.
+- Maintain correct remaining quantities.
+- Consider food collection deadlines.
+- Recalculate remaining availability after every accepted allocation.
+- Keep a clear allocation history.
+
+Show allocation as:
+- Pending.
+- Partially Allocated.
+- Fully Allocated.
+- Accepted.
+- Rejected.
+- Pickup Scheduled.
+- Collected.
+- Completed.
+- Cancelled.
+- Expired.
+- Unclaimed.
+
+---
+
+# 8. REAL-TIME CHAT AND COMMUNICATION
+
+Create a communication centre connecting providers and NGOs.
+
+Features:
+- Donation-specific chat.
+- Sender and receiver identification.
+- Message timestamps.
+- Read and unread status.
+- Notifications.
+- Collection time negotiation.
+- Pickup instructions.
+- Quantity updates.
+- Delay notifications.
+- Cancellation information.
+- Message history.
+
+Use WebSocket with STOMP when the backend supports it.
+
+If WebSocket APIs are not yet implemented, build the chat interface with a clearly labelled demo adapter. Do not claim real-time communication is active when it is not.
+
+Create an in-app notification centre for all users.
+
+Example notifications:
+
+Provider:
+- Your surplus confirmation is pending.
+- Your donation has been allocated.
+- An NGO has accepted the collection.
+- Pickup is scheduled.
+
+NGO:
+- A new confirmed donation is available.
+- Your allocation has been accepted.
+- Pickup reminder.
+- Donation quantity has changed.
+- Food collection deadline approaching.
+
+Admin:
+- New provider registration.
+- New NGO registration.
+- Documents pending review.
+- Unclaimed donations.
+- Collection delays.
+- Complaints.
+
+---
+
+# 9. ADMINISTRATOR PORTAL
+
+Create a professional Admin Dashboard.
+
+## A. Admin Dashboard
+
+Show:
+- Total registered providers.
+- Verified providers.
+- Pending provider approvals.
+- Total NGOs.
+- Verified NGOs.
+- Total donations.
+- Confirmed food quantity.
+- Allocated food quantity.
+- Successfully collected food.
+- Unclaimed donations.
+- Completed donations.
+
+Include visual analytics and charts.
+
+## B. Provider Verification
+
+Admin can:
+- View provider details.
+- Review uploaded documents.
+- Verify licence information.
+- Approve provider.
+- Reject provider with a reason.
+- Request corrections.
+- Suspend accounts.
+- Maintain verification history.
+
+## C. NGO Verification
+
+Admin can:
+- View NGO details.
+- Review registration documents.
+- Verify NGO information.
+- Approve or reject.
+- Request corrections.
+- Suspend accounts.
+- View previous verification activity.
+
+## D. User Management
+
+Manage:
+- Providers.
+- NGOs.
+- Administrators.
+
+Show account status, registration date, verification status and relevant activity.
+
+## E. Donation Monitoring
+
+Admin must be able to view:
+- All donations.
+- Confirmed quantities.
+- Allocation status.
+- Assigned NGOs.
+- Pickup schedules.
+- Completed collections.
+- Failed collections.
+- Cancelled donations.
+- Expired donations.
+- Unclaimed food.
+
+Allow the admin to investigate issues and intervene where necessary.
+
+## F. Complaints and Support
+
+Include a complaint management section with:
+- Complaint ID.
+- Reported by.
+- Related donation.
+- Complaint category.
+- Description.
+- Date.
+- Status.
+- Admin response.
+
+## G. Audit Logs
+
+Maintain a record of important administrative activities, including approvals, rejections, account changes and allocation interventions.
+
+---
+
+# 10. TRACKING AND IMPACT ANALYTICS
+
+Create a complete Donation Tracking module.
+
+Track the entire donation lifecycle:
+
+Prediction → Provider Confirmation → Donation Created → NGO Allocation → NGO Acceptance → Pickup Scheduling → Collection → Distribution Confirmation → Completed.
+
+Create a detailed tracking page.
+
+Allow the provider and NGO to view the same donation progress according to their permissions.
+
+Create analytics for:
+
+- Total predicted surplus.
+- Actual confirmed surplus.
+- Total food allocated.
+- Total food collected.
+- Unclaimed food.
+- Completed donations.
+- Prediction accuracy.
+- Provider participation.
+- NGO participation.
+- Donation success rate.
+- Estimated meals rescued.
+
+Make all charts interactive with date filters, weekly reports and monthly reports.
+
+Clearly distinguish measured data from estimated impact figures. Do not invent actual environmental benefits or claim real-world impact without supporting data.
+
+---
+
+# 11. DATABASE AND DATA STRUCTURE
+
+The existing database is MySQL, named foodrescue_db.
+
+Plan the frontend data models and API structures around the following entities:
+
+- Users.
+- Food Providers.
+- Provider Documents.
+- NGOs.
+- NGO Documents.
+- Food Items.
+- Inventory Records.
+- Waste History.
+- Surplus Predictions.
+- Donations.
+- Donation Allocations.
+- Pickup Records.
+- Messages.
+- Notifications.
+- Verification Records.
+- Feedback Records.
+- Audit Logs.
+
+Use consistent IDs, timestamps, relationships and status values.
+
+Do not create a separate frontend database that conflicts with MySQL.
+
+Inspect the supplied backend models and use their actual field names wherever available.
+
+---
+
+# 12. API INTEGRATION
+
+Create a reusable API integration structure.
+
+Suggested frontend structure:
+
+src/
+  assets/
+  components/
+    common/
+    layout/
+    charts/
+    forms/
+    tables/
+  pages/
+    public/
+    auth/
+    provider/
+    ngo/
+    admin/
+  services/
+    apiClient.ts
+    authService.ts
+    providerService.ts
+    ngoService.ts
+    donationService.ts
+    allocationService.ts
+    notificationService.ts
+    chatService.ts
+    adminService.ts
+  hooks/
+  contexts/
+  types/
+  utils/
+  routes/
+  App.tsx
+  main.tsx
+
+Requirements:
+
+- Centralized API base URL.
+- Reusable fetch or Axios client.
+- Authentication token handling compatible with the backend.
+- Error handling.
+- Request loading states.
+- Form validation.
+- Role-based route protection.
+- Typed API request and response models.
+- Reusable components.
+- API endpoint documentation.
+
+Recommended API operation groups:
+
+Authentication:
+- Register.
+- Login.
+- Verify email.
+- Verify phone OTP.
+- Forgot password.
+- Reset password.
+- Logout.
+- Get current user.
+
+Providers:
+- Create and update provider profile.
+- Submit verification documents.
+- Manage inventory.
+- Retrieve predictions.
+- Confirm surplus.
+- Create voluntary donation.
+- View donation history.
+
+NGOs:
+- Create and update NGO profile.
+- Submit verification documents.
+- View available donations.
+- View recommended allocations.
+- Accept or decline allocation.
+- Manage pickups.
+- Confirm collection.
+
+Admin:
+- View pending verifications.
+- Approve or reject providers.
+- Approve or reject NGOs.
+- Manage accounts.
+- Monitor donations.
+- Monitor allocations.
+- View analytics.
+- Manage complaints.
+
+Use the actual endpoints exposed by the provided Java backend. If endpoints are unavailable, document proposed endpoints clearly and use an explicit development mock adapter until the backend implements them.
+
+---
+
+# 13. SECURITY AND RELIABILITY
+
+Implement a professional security-aware frontend.
+
+Requirements:
+- Role-based routing.
+- Protected dashboards.
+- Secure login flow.
+- Input validation.
+- Clear error messages.
+- File upload validation.
+- Safe handling of uploaded documents.
+- No hardcoded passwords or secret keys.
+- No fake authorization.
+- No direct database credentials in frontend.
+- No exposure of private information between users.
+- Logout and session expiration handling.
+
+Remember that frontend role checks are not a replacement for Spring Security authorization.
+
+Only authorized backend users may perform sensitive operations.
+
+Do not allow NGOs to access provider-only information or providers to access private NGO information.
+
+---
+
+# 14. USER EXPERIENCE REQUIREMENTS
+
+Every important button must work.
+
+Do not create buttons that have no functionality.
+
+Implement:
+- Search.
+- Filtering.
+- Sorting.
+- Pagination where useful.
+- Form validation.
+- Confirmation dialogs.
+- Success notifications.
+- Error notifications.
+- Loading indicators.
+- Empty states.
+- Mobile navigation.
+- Responsive sidebars.
+- Breadcrumbs.
+- User profile menu.
+- Notification dropdown.
+- Dashboard charts.
+
+For tables and forms, provide realistic sample records in demo mode.
+
+Use proper date and quantity formatting.
+
+Use consistent status badges.
+
+Provide useful instructions when a user has no records.
+
+---
+
+# 15. DEMO DATA AND DEMONSTRATION WORKFLOW
+
+Include realistic sample demo data for:
+
+- Three food providers.
+- Five NGOs.
+- Multiple food categories.
+- Inventory records.
+- Surplus predictions.
+- Confirmed donations.
+- Partial allocations.
+- Pickup schedules.
+- Completed donations.
+
+Create a demonstration workflow:
+
+1. A hotel enters its daily food inventory.
+2. The system calculates a possible surplus of 50 meals.
+3. The provider receives a confirmation request.
+4. The provider confirms 50 meals.
+5. The donation becomes available for allocation.
+6. The system recommends suitable NGOs.
+7. The confirmed meals are distributed among multiple NGOs.
+8. NGOs accept their allocated quantities.
+9. Pickup schedules are confirmed.
+10. Collection is completed.
+11. The provider and NGO dashboards update.
+12. Admin analytics reflect the completed donation.
+
+Add a visible DEMO DATA label whenever sample information is used.
+
+Do not present sample records as real donations or real users.
+
+---
+
+# 16. QUALITY AND FINAL DELIVERY REQUIREMENTS
+
+Generate a complete working application, not just a design concept.
+
+Requirements:
+- Complete source code.
+- Organized components.
+- Working React routes.
+- Responsive dashboards.
+- Functional forms.
+- Functional buttons.
+- Reusable API services.
+- Correct TypeScript types.
+- Professional visual design.
+- Demo mode.
+- Backend integration structure.
+- Clear setup instructions.
+- Environment variable example.
+- API documentation.
+- No unnecessary dependencies.
+
+Run the available checks and fix all TypeScript and build errors.
+
+Ensure:
+- npm install works.
+- npm run dev works.
+- npm run build completes successfully.
+- No broken imports.
+- No missing components.
+- No blank dashboard pages.
+- No broken navigation.
+- No console errors caused by the generated code.
+
+Create a README explaining how to:
+1. Install dependencies.
+2. Configure the backend URL.
+3. Enable or disable demo mode.
+4. Start the frontend.
+5. Connect the Java backend.
+6. Test the three portals.
+
+---
+
+# 17. FINAL EXPECTATION
+
+I want a complete, premium-quality FoodRescue website with three fully separated role-based portals:
+
+1. Food Provider Portal.
+2. NGO Portal.
+3. Admin Portal.
+
+The website must look like a real social-impact technology startup product.
+
+Prioritize an attractive professional UI, proper user journeys, working interactions, realistic food donation workflows and future compatibility with the existing Java Spring Boot and MySQL backend.
+
+Do not stop after generating the home page.
+
+Do not stop after generating one dashboard.
+
+Build all the major pages and modules described above.
+
+If a task depends on an API that has not yet been implemented, clearly identify that dependency and provide a working demo-mode alternative without pretending it is connected.
+
+First inspect the available project files. Then create the full application, test it, fix errors and provide a summary of completed pages, functions and remaining backend integration requirements.
+
+The final product should be suitable for a college project demonstration and designed with a realistic future community pilot in mind.
